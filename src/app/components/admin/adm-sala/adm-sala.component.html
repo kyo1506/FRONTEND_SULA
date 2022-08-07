@@ -1,0 +1,52 @@
+<body>
+    <div class="input-tile">
+        <form class="input">
+            <mat-form-field class="busca" appearance="fill">
+                <mat-label>Busca</mat-label>
+                <input matInput placeholder="" value="">
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="button-tile">
+        <button mat-raised-button class="button" color="primary" (click)="create()">Nova Sala</button>
+        <button mat-raised-button class="button" color="accent" (click)="update()">Update</button>
+        <button mat-raised-button class="button" color="warn" (click)="delet()">Deletar</button>
+    </div>
+<div class="table-tile">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="numero">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.numero}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="manutencao">
+            <th mat-header-cell *matHeaderCellDef> Manutenção </th>
+            <td mat-cell *matCellDef="let element"> {{element.manutencao}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="tamanho">
+            <th mat-header-cell *matHeaderCellDef> Quantidade de alunos </th>
+            <td mat-cell *matCellDef="let element"> {{element.tamanho}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+
+
+
+</body>

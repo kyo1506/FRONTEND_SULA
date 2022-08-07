@@ -1,0 +1,33 @@
+.input-tile{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 300px;
+}
+.button-tile{
+    position:absolute;
+    top:5%;
+    left:25%;
+}
+.table-tile{
+    position: absolute;
+    top:15%;
+    left:5%;
+    width: 40%;
+}
+.input{
+    min-width: 150px;
+    max-width: 600px;
+    width: 100%;
+}
+.busca{
+    width: 100%;
+}
+
+.button{
+    margin-left: 1vh;
+}
+table {
+    max-width: 600px;
+    width: 100%;
+  }
