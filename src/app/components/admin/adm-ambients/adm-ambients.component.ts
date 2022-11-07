@@ -5,6 +5,7 @@ import { AmbCModalComponent } from './amb-c-modal/amb-c-modal.component';
 import { AmbientService } from 'src/app/services/ambient.service';
 import { Ambient } from 'src/app/models/model';
 import { AmbVModalComponent } from './amb-v-modal/amb-v-modal.component';
+import { AmbUModalComponent } from './amb-u-modal/amb-u-modal.component';
 
 @Component({
   selector: 'app-adm-ambients',
@@ -53,7 +54,9 @@ export class AdmAmbientsComponent implements OnInit {
       }
     }
   }  
-  update(){}
+  update(){
+    this.dialog.open(AmbUModalComponent);
+  }
   deActivateAmb(){
     
     this.ambient.ambientAll().subscribe((data)=>{

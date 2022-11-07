@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from 'src/app/services/course.controller.service';
 import { MatDialog } from '@angular/material/dialog';
+import { CourCModalComponent } from './cour-c-modal/cour-c-modal.component';
+import { CourUModalComponent } from './cour-u-modal/cour-u-modal.component';
 
 @Component({
   selector: 'app-adm-course',
@@ -13,7 +15,7 @@ export class AdmCourseComponent implements OnInit {
   dataSource: any;
   checkBoxArray = new Array();
 
-  constructor(private course:CourseService) { }
+  constructor(private course:CourseService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.course.courseAll().subscribe((data)=>{
@@ -38,7 +40,15 @@ export class AdmCourseComponent implements OnInit {
       }
     }
   }
-  createCourse(){ }
-  updateCourse(){}
+  createCourse(){
+    this.dialog.open(CourCModalComponent);
+   }
+  updateCourse(){
+    this.dialog.open(CourUModalComponent, {
+      data:{
+        id: this.checkBoxArray[0],
+      }
+    });
+  }
   deactivateCourse(){}
 }
